@@ -1,0 +1,24 @@
+name: Plan Gate
+
+on:
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  require-plan-template:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Require pull request template
+        run: |
+          if [ ! -f ".github/pull_request_template.md" ]; then
+            echo "Pull request template is required."
+            exit 1
+          fi
+          echo "Pull request template found."
