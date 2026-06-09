@@ -12,7 +12,7 @@ The architecture follows modern DevSecOps and GitOps best practices by ensuring 
 
 # Architecture Diagram
 
-![GitHub Agentic AI Workflow](../docs/ai-github-agent-diagram.png)
+![GitHub Agentic AI Workflow](../img/ai-github-agent-diagram.png)
 
 ---
 
@@ -220,6 +220,12 @@ The platform implements multiple security layers:
 * Required Approvals
 * Required Status Checks
 * GitHub Advanced Security
+
+---
+
+# Architecture Workflow
+
+![GitHub Agentic AI Workflow](../img/ai-github-agent-diagram.png)
 
 ---
 

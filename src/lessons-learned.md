@@ -1,5 +1,9 @@
 # Lessons Learned
 
+## Merge Validation
+
+![Pull Request Merge Validation](../img/merge-pull-request.png)
+
 ## Overview
 
 This document summarizes the key lessons learned while designing, building, securing, validating, and deploying the GitHub Agentic AI Workflow Platform.
@@ -475,6 +479,7 @@ The most important lessons learned were:
 * Continuous improvement is critical.
 
 ---
+
 
 # Project Outcomes
 
