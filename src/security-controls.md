@@ -472,9 +472,6 @@ The platform continuously monitors:
 * Branch Protection Events
 
 ---
-## Pull Request Validation
-
-![Pull Request Validation](../img/checks-passed.png)
 
 # Security Validation Checklist
 
@@ -490,6 +487,10 @@ Verify the following controls:
 * Deployment Approvals Enabled
 * Terraform Validation Enabled
 * AI Review Enabled
+
+## Pull Request Validation
+
+![Pull Request Validation](../img/checks-passed.png)
 
 ---
 
