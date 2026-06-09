@@ -108,10 +108,6 @@ Benefits include:
 * Secure release process
 * Protected environments
 
----
-
-# Deployment Approval Completed
-
 ![Deployment Approval Completed](https://raw.githubusercontent.com/jbanday808/github-ai-agent/main/img/deply.yml-approved.png)
 
 
