@@ -1,0 +1,22 @@
+<results>
+  <rule id="xccdf_org.ssgproject.content_rule_disable_root_login">
+    <title>Disable SSH Root Login</title>
+    <result>fail</result>
+    <severity>high</severity>
+    <description>Root login over SSH should be disabled to reduce unauthorized access risk.</description>
+  </rule>
+
+  <rule id="xccdf_org.ssgproject.content_rule_enable_auditd">
+    <title>Enable auditd Service</title>
+    <result>pass</result>
+    <severity>medium</severity>
+    <description>The auditd service should be enabled to capture security events.</description>
+  </rule>
+
+  <rule id="xccdf_org.ssgproject.content_rule_disable_empty_passwords">
+    <title>Disable Empty Passwords</title>
+    <result>fail</result>
+    <severity>high</severity>
+    <description>Accounts should not be allowed to use empty passwords.</description>
+  </rule>
+</results>
