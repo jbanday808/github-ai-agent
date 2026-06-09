@@ -10,7 +10,8 @@ The architecture follows modern DevSecOps and GitOps best practices by implement
 
 # Architecture Diagram
 
-![GitHub Agentic AI Workflow](img/ai-github-agent-diagram.png)
+![GitHub Agentic AI Workflow](https://raw.githubusercontent.com/jbanday808/github-ai-agent/main/img/ai-github-agent-diagram.png)
+
 
 ---
 
@@ -71,7 +72,7 @@ The validation process includes:
 
 # Pull Request Validation Screenshot
 
-![Pull Request Validation](img/checks-passed.png)
+![Pull Request Validation](https://raw.githubusercontent.com/jbanday808/github-ai-agent/main/img/checks-passed.png)
 
 
 ---
@@ -91,7 +92,7 @@ This additional security layer ensures:
 
 # Deployment Waiting for Approval
 
-![Deployment Approval Required](img/run-workflow-pending-approval.png)
+![Deployment Approval Required](https://raw.githubusercontent.com/jbanday808/github-ai-agent/main/img/run-workflow-pending-approval.png)
 
 ---
 
@@ -111,7 +112,8 @@ Benefits include:
 
 # Deployment Approval Completed
 
-![Deployment Approval Completed](img/deply.yml-approved.png)
+![Deployment Approval Completed](https://raw.githubusercontent.com/jbanday808/github-ai-agent/main/img/deply.yml-approved.png)
+
 
 ---
 
@@ -130,7 +132,7 @@ Before merging:
 
 # Pull Request Merge Validation
 
-![Pull Request Merge Validation](img/merge-pull-request.png)
+![Pull Request Merge Validation](https://raw.githubusercontent.com/jbanday808/github-ai-agent/main/img/merge-pull-request.png)
 
 ---
 
