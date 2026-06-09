@@ -14,3 +14,4 @@ Reviewers validate the approach.
 Approvals are completed.
 
 The Pull Request is merged safely.
+Testing branch protection.
