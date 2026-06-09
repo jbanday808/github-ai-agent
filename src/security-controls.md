@@ -472,6 +472,9 @@ The platform continuously monitors:
 * Branch Protection Events
 
 ---
+## Pull Request Validation
+
+![Pull Request Validation](../img/checks-passed.png)
 
 # Security Validation Checklist
 

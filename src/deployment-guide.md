@@ -292,6 +292,9 @@ Verify successful execution of:
 ---
 
 # Deployment Approval Process
+## Deployment Waiting for Approval
+
+![Deployment Approval Required](../img/run-workflow-pending-approval.png)
 
 Production deployments require manual approval.
 
@@ -356,6 +359,11 @@ Expected Result:
 ```text
 Deployment approved for production
 ```
+---
+
+## Deployment Approval Completed
+
+![Deployment Approval Completed](../img/deply.yml-approved.png)
 
 ---
 
