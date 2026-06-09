@@ -1,6 +1,7 @@
 import os
+import sys
 import requests
-from openai import OpenAI
+from openai import OpenAI, RateLimitError, APIError, AuthenticationError
 
 repo = os.environ["GITHUB_REPOSITORY"]
 token = os.environ["GITHUB_TOKEN"]
@@ -13,6 +14,16 @@ headers = {
     "Authorization": f"Bearer {token}",
     "Accept": "application/vnd.github+json"
 }
+
+comment_url = f"https://api.github.com/repos/{repo}/issues/{pr_number}/comments"
+
+def post_comment(message):
+    requests.post(
+        comment_url,
+        headers=headers,
+        json={"body": message},
+        timeout=30
+    )
 
 files_url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/files"
 files = requests.get(files_url, headers=headers, timeout=30).json()
@@ -40,20 +51,40 @@ Changes:
 {chr(10).join(changed_files)}
 """
 
-response = client.responses.create(
-    model="gpt-4.1-mini",
-    input=prompt
-)
+try:
+    response = client.responses.create(
+        model="gpt-4.1-mini",
+        input=prompt
+    )
 
-review = response.output_text
+    review = response.output_text
 
-comment_url = f"https://api.github.com/repos/{repo}/issues/{pr_number}/comments"
+    post_comment(f"## AI Pull Request Review\n\n{review}")
 
-requests.post(
-    comment_url,
-    headers=headers,
-    json={"body": f"## AI Pull Request Review\n\n{review}"},
-    timeout=30
-)
+    print("AI Pull Request Review posted successfully.")
 
-print("AI Pull Request Review posted successfully.")
+except RateLimitError:
+    post_comment(
+        "## AI Pull Request Review\n\n"
+        "The AI review could not run because the OpenAI API quota or billing limit was reached. "
+        "Please check OpenAI billing, usage limits, or available credits, then rerun the workflow."
+    )
+    print("OpenAI quota or rate limit reached.")
+    sys.exit(0)
+
+except AuthenticationError:
+    post_comment(
+        "## AI Pull Request Review\n\n"
+        "The AI review could not run because the OpenAI API key is invalid or missing. "
+        "Please verify the OPENAI_API_KEY GitHub Actions secret."
+    )
+    print("OpenAI authentication failed.")
+    sys.exit(1)
+
+except APIError as error:
+    post_comment(
+        "## AI Pull Request Review\n\n"
+        f"The AI review could not run because of an OpenAI API error: {error}"
+    )
+    print(f"OpenAI API error: {error}")
+    sys.exit(1)
