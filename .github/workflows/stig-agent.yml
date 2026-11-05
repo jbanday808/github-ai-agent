@@ -28,7 +28,7 @@ jobs:
         run: python agents/stig_agent.py
 
       - name: Upload STIG Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: stig-remediation-report
           path: compliance/reports/stig-remediation-report.md
